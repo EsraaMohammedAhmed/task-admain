@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة المنتجات</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F9F9F9;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            text-align: right;
+        }
+
+        .header, .sidebar {
+            background-color: #FFFFFF;
+            padding: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .header button {
+            background-color: #1976D2;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .header button:hover {
+            background-color: #1565C0;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 20%;
+            padding-top: 40px;
+        }
+
+        .sidebar .menu {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar .menu li {
+            padding: 15px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .sidebar .menu li:hover {
+            background-color: #E3F2FD;
+            border-radius: 5px;
+        }
+
+        .content {
+            width: 80%;
+            padding: 20px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .controls .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .controls input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #CCC;
+            border-radius: 5px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            width: 23%;
+            background-color: #FFFFFF;
+            border: 1px solid #CCC;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .card .actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .card .actions button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .card .actions .edit {
+            background-color: #1976D2;
+            color: #FFFFFF;
+        }
+
+        .card .actions .delete {
+            background-color: #D32F2F;
+            color: #FFFFFF;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #1976D2;
+            color: #FFFFFF;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .pagination button:hover {
+            background-color: #1565C0;
+        }
+
+        .pagination .active {
+            background-color: #1976D2;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>إدارة المنتجات</h1>
+        <button>مصطفى حامد</button>
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <ul class="menu">
+                <li>المستودع</li>
+                <li>المنتجات</li>
+                <li>الفواتير</li>
+                <li>الحسابات</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="controls">
+                <div class="buttons">
+                    <button>أضف فاتورة</button>
+                    <button>أضف منتج</button>
+                </div>
+                <input type="text" placeholder="بحث عبر المنتج">
+            </div>
+
+            <div class="card-container">
+                <!-- Product Cards -->
+                <div class="card">
+                    <img src="product-image.png" alt="Product Image">
+                    <h3>طقم زوج</h3>
+                    <p>وحدة القياس</p>
+                    <div class="actions">
+                        <button class="edit">تعديل</button>
+                        <button class="delete">حذف</button>
+                    </div>
+                </div>
+                <!-- Add similar cards here -->
+            </div>
+
+            <div class="pagination">
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F9F9F9;
+            margin: 0;
+            padding: 20px;
+            direction: rtl;
+            text-align: right;
+        }
+
+        .card {
+            width: 260px;
+            background-color: #FFFFFF;
+            border: 1px solid #E0E0E0;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 15px;
+            box-sizing: border-box;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .card img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        .card .badge {
+            display: inline-block;
+            background-color: #E3F2FD;
+            color: #1976D2;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 12px;
+            margin: 10px 0;
+        }
+
+        .card .price-section {
+            background-color: #F5F5F5;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .card .price-section span {
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .card .price-section input {
+            width: 60px;
+            padding: 5px;
+            margin-top: 5px;
+            border: 1px solid #CCC;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .card .actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .card .actions button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .card .actions .edit {
+            background-color: #4CAF50;
+            color: #FFFFFF;
+        }
+
+        .card .actions .purchase {
+            background-color: #1976D2;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <img src="product-image.png" alt="Product Image">
+    <div class="badge">ملابس</div>
+    <h3>طقم خروج</h3>
+    <p>وصف المنتج: نوفر جوبيا حديثة ونسيج...</p>
+    
+    <div class="price-section">
+        <span>كمية: <input type="number" value="1500"></span>
+        <span>سعر الشراء: <input type="number" value="1500"></span>
+        <span>سعر البيع: <input type="number" value="1500"></span>
+    </div>
+    
+    <div class="actions">
+        <button class="edit">تعديل</button>
+        <button class="purchase">شراء الكاتلوج</button>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
